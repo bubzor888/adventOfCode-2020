@@ -5,7 +5,7 @@ import java.nio.file.Paths
 
 fun main() {
     val test1 = listOf("1721","979","366","299","675","1456");
-    if (execute(test1) == 514579) {
+    if (execute(test1) == 241861950) {
         println("Test1 Pass")
     } else {
         println("Test1 Failed")
@@ -21,8 +21,10 @@ private fun execute(input: List<String>): Int {
 
     input.forEachIndexed{ index, element ->
         for (i in index + 1 until input.size) {
-            if (element.toInt() + input[i].toInt() == 2020) {
-                return element.toInt() * input[i].toInt()
+            for (j in index + 2 until input.size ) {
+                if (element.toInt() + input[i].toInt() + input[j].toInt() == 2020) {
+                    return element.toInt() * input[i].toInt() * input[j].toInt()
+                }
             }
         }
     }
