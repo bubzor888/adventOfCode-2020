@@ -1,29 +1,14 @@
-package com.code.aoc2020.common
+package common
 
 import java.io.File
 import java.nio.file.Paths
+import kotlin.test.assertEquals
 
 fun main(args: Array<String>) {
     val test1 = listOf("")
-    if (execute(test1) == 1) {
-        println("Test1 Pass")
-    } else {
-        println("Test1 Failed")
-    }
+    assertEquals(0, execute(test1))
 
-//    val test2 = listOf("")
-//    if (execute(test2) == 2) {
-//        println("Test2 Pass")
-//    } else {
-//        println("Test2 Failed")
-//    }
-//
-//    val test3 = listOf("")
-//    if (execute(test3) == 3) {
-//        println("Test3 Pass")
-//    } else {
-//        println("Test3 Failed")
-//    }
+    println("Tests passed, attempting input")
 
     val path = Paths.get("").toAbsolutePath().toString()
     var fileName = "$path\\src\\main\\kotlin\\day1\\input.txt"

@@ -1,15 +1,14 @@
-package com.code.aoc2020.day1
+package day1
 
 import java.io.File
 import java.nio.file.Paths
+import kotlin.test.assertEquals
 
 fun main() {
     val test1 = listOf("1721","979","366","299","675","1456");
-    if (execute(test1) == 241861950) {
-        println("Test1 Pass")
-    } else {
-        println("Test1 Failed")
-    }
+    assertEquals(241861950, execute(test1))
+
+    println("Tests passed, attempting input")
 
     val path = Paths.get("").toAbsolutePath().toString()
     var fileName = "$path\\src\\main\\kotlin\\day1\\input.txt"
