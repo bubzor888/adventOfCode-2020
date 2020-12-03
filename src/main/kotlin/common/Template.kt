@@ -11,7 +11,7 @@ fun main(args: Array<String>) {
     println("Tests passed, attempting input")
 
     val path = Paths.get("").toAbsolutePath().toString()
-    var fileName = "$path\\src\\main\\kotlin\\day1\\input.txt"
+    val fileName = "$path\\src\\main\\kotlin\\day1\\input.txt"
 
     println("Final Result: ${execute(File(fileName).readLines())}")
 

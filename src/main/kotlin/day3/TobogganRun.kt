@@ -5,7 +5,18 @@ import java.nio.file.Paths
 import kotlin.test.assertEquals
 
 fun main(args: Array<String>) {
-    val test1 = listOf("..##.......","#...#...#..",".#....#..#.","..#.#...#.#",".#...##..#.","..#.##.....",".#.#.#....#",".#........#","#.##...#...","#...##....#",".#..#...#.#")
+    val test1 = listOf(
+        "..##.......",
+        "#...#...#..",
+        ".#....#..#.",
+        "..#.#...#.#",
+        ".#...##..#.",
+        "..#.##.....",
+        ".#.#.#....#",
+        ".#........#",
+        "#.##...#...",
+        "#...##....#",
+        ".#..#...#.#")
     assertEquals(2, checkSlope(test1, 1, 1))
     assertEquals(7, checkSlope(test1, 3, 1))
     assertEquals(3, checkSlope(test1, 5, 1))
@@ -16,7 +27,7 @@ fun main(args: Array<String>) {
     println("Tests passed, attempting input")
 
     val path = Paths.get("").toAbsolutePath().toString()
-    var fileName = "$path\\src\\main\\kotlin\\day3\\input.txt"
+    val fileName = "$path\\src\\main\\kotlin\\day3\\input.txt"
 
     println("Final Result: ${execute(File(fileName).readLines())}")
 
