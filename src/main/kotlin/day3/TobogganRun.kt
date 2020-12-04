@@ -23,14 +23,11 @@ fun main(args: Array<String>) {
     assertEquals(4, checkSlope(test1, 7, 1))
     assertEquals(2, checkSlope(test1, 1, 2))
     assertEquals(336, execute(test1))
-
     println("Tests passed, attempting input")
 
     val path = Paths.get("").toAbsolutePath().toString()
     val fileName = "$path\\src\\main\\kotlin\\day3\\input.txt"
-
     println("Final Result: ${execute(File(fileName).readLines())}")
-
 }
 
 private fun checkSlope(input: List<String>, right: Int, down: Int): Int {
@@ -40,7 +37,6 @@ private fun checkSlope(input: List<String>, right: Int, down: Int): Int {
         if (input[y][x] == '#') {
             count++
         }
-
         x = (x + right) % input[y].length
     }
 

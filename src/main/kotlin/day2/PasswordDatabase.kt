@@ -20,7 +20,6 @@ fun main(args: Array<String>) {
     var fileName = "$path\\src\\main\\kotlin\\day2\\input.txt"
 
     println("Final Result: ${execute(File(fileName).readLines())}")
-
 }
 
 private fun execute(input: List<String>): Int {
