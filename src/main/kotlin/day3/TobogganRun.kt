@@ -44,7 +44,7 @@ private fun checkSlope(input: List<String>, right: Int, down: Int): Int {
 }
 
 private fun execute(input: List<String>): Long {
-    var total: Long = 1
+    var total = 1L
     total *= checkSlope(input, 1, 1)
     total *= checkSlope(input, 3, 1)
     total *= checkSlope(input, 5, 1)
