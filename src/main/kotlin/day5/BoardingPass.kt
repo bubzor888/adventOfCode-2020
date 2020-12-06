@@ -10,16 +10,12 @@ fun main(args: Array<String>) {
     assertEquals(567, readSeat("BFFFBBFRRR"))
     assertEquals(119, readSeat("FFFBBBFRRR"))
     assertEquals(820, readSeat("BBFFBBFRLL"))
-
-
-
     println("Tests passed, attempting input")
 
     val path = Paths.get("").toAbsolutePath().toString()
     val fileName = "$path\\src\\main\\kotlin\\day5\\input.txt"
 
     println("Final Result 1: ${execute(File(fileName).readLines())}")
-
     println("Final Result 2: ${execute2(File(fileName).readLines())}")
 }
 
@@ -52,6 +48,5 @@ private fun execute2(input: List<String>): Int {
             return seats[i] + 1
         }
     }
-
     return -1
 }

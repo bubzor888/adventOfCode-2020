@@ -13,9 +13,14 @@ fun main(args: Array<String>) {
 //    val path = Paths.get("").toAbsolutePath().toString()
 //    val fileName = "$path\\src\\main\\kotlin\\dayX\\input.txt"
 //
-//    println("Final Result: ${execute(File(fileName).readLines())}")
+//    println("Final Result 1: ${day6.execute(File(fileName).readLines())}")
+//    println("Final Result 2: ${day6.execute(File(fileName).readLines())}")
 }
 
 private fun execute(input: List<String>): Int {
+    return 0
+}
+
+private fun execute2(input: List<String>): Int {
     return 0
 }
