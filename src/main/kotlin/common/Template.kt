@@ -13,8 +13,12 @@ fun main(args: Array<String>) {
 //    val path = Paths.get("").toAbsolutePath().toString()
 //    val fileName = "$path\\src\\main\\kotlin\\dayX\\input.txt"
 //
-//    println("Final Result 1: ${day6.execute(File(fileName).readLines())}")
-//    println("Final Result 2: ${day6.execute(File(fileName).readLines())}")
+//    println("Final Result 1: ${execute(File(fileName).readLines())}")
+//    println("Final Result 2: ${execute2(File(fileName).readLines())}")
+
+//    Alternative to read whole file, when splitting on \n is easier:
+//    println("Final Result 1: ${execute(File(fileName).readText())}")
+//    println("Final Result 2: ${execute2(File(fileName).readText())}")
 }
 
 private fun execute(input: List<String>): Int {
