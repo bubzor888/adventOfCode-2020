@@ -4,7 +4,7 @@ import java.io.File
 import java.nio.file.Paths
 import kotlin.test.assertEquals
 
-fun main(args: Array<String>) {
+fun main() {
     val test1 = listOf("")
     assertEquals(0, execute(test1))
 
