@@ -18,7 +18,7 @@ fun main() {
         "jmp -4",
         "acc +6"
     )
-//    assertEquals(5, execute(test1))
+    assertEquals(5, execute(test1))
     assertEquals(8, execute2(test1))
 
     println("Tests passed, attempting input")
@@ -73,6 +73,5 @@ private fun execute2(input: List<String>): Int? {
             if (result.first) return result.second
         }
     }
-
     return null
 }
