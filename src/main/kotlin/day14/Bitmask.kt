@@ -28,8 +28,6 @@ private fun applyMask(mask:String, number: Long): Long {
                 false -> mask[index]
             }
         }.joinToString("").toLong(2)
-
-    return 0L
 }
 
 private fun execute(input: List<String>): Long {
