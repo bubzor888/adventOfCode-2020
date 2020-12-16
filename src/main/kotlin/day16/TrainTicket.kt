@@ -92,7 +92,7 @@ private fun execute2(input: String): Long {
             }
         }
 
-    // Map Key is row of each ticket
+    // Below, Map Key will be the row of each ticket
     // Map Value is a list of each number in the ticket
     // Each of those lists contain a list of which rules are valid for that number
     val validRules = mutableMapOf<Int, MutableList<List<Int>>>()
@@ -104,35 +104,31 @@ private fun execute2(input: String): Long {
         validRules[i] = v
     }
 
-    // Map Key is now the position of the numbers in the tickets
+    // Below, Map Key will be the position of the numbers in the tickets
     // Map Value now a set of intersections of valid rules for that number position
     var intersections = validRules.map {
         it.value.fold(it.value[0].toSet()) { acc, list ->
             acc intersect list
         }
-    }
+    }.toMutableList()
 
     // When a set has only 1 valid rule, we add that to the results and empty out the entry
     // We also need to remove that position from all of the other sets since it can't be used twice
     val results = mutableMapOf<Int, String>()
-    var found = 0
-    while (found < intersections.size) {
-        var newRules = intersections.toMutableList()
+    while (results.keys.size < intersections.size) {
         val toFilter = mutableListOf<Int>()
         intersections.forEachIndexed { i, it ->
             if (it.size == 1) {
                 results[i] = ruleSet.rules[it.first()].name
-                newRules[i] = setOf()
+                intersections[i] = setOf()
                 toFilter.add(it.first())
-                found++
             }
         }
         toFilter.forEach{ num ->
-            newRules = newRules.map { rule ->
+            intersections = intersections.map { rule ->
                 rule.filterNot{ it == num }.toSet()
             }.toMutableList()
         }
-        intersections = newRules
     }
 
     val myTicket = sections[1].substringAfter("\n").split(",")
